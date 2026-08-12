@@ -4,50 +4,31 @@
 
 <style>
 /* ============ TOKENS ============ */
+/* Dark is the deliberate default (control-room look) regardless of OS
+   preference. An explicit light choice on the host (data-theme="light")
+   is the only thing that switches it. */
 :root{
-  --bg:#F4F6FA;
-  --surface:#FFFFFF;
-  --surface-2:#EBEFF5;
-  --surface-3:#E1E7F0;
-  --border:#D7DEE8;
-  --text:#101826;
-  --text-secondary:#445064;
-  --text-muted:#6B7688;
-  --accent:#0E7C8C;
-  --accent-strong:#0A6270;
-  --accent-wash:#0E7C8C14;
-  --good:#1F8A4C;
-  --good-wash:#1F8A4C1a;
-  --warn:#B5790A;
-  --warn-wash:#B5790A1a;
-  --critical:#C2293B;
-  --critical-wash:#C2293B1a;
-  --shadow: 0 1px 2px rgba(16,24,38,.06), 0 8px 24px -12px rgba(16,24,38,.18);
+  --bg:#0A0F1A;
+  --surface:#121A2C;
+  --surface-2:#1A2438;
+  --surface-3:#232F47;
+  --border:#263349;
+  --text:#E7EDF5;
+  --text-secondary:#9AAAC2;
+  --text-muted:#64758F;
+  --accent:#4C8DFF;
+  --accent-strong:#84B0FF;
+  --accent-wash:#4C8DFF1f;
+  --good:#3FA868;
+  --good-wash:#3FA8681f;
+  --warn:#C2810A;
+  --warn-wash:#C2810A1f;
+  --critical:#D93A5C;
+  --critical-wash:#D93A5C1f;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 32px -14px rgba(0,0,0,.6);
   --font-display: "Liberation Sans", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Liberation Sans", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "Liberation Mono", "SF Mono", "Cascadia Code", ui-monospace, monospace;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0A0F1A;
-    --surface:#121A2C;
-    --surface-2:#1A2438;
-    --surface-3:#232F47;
-    --border:#263349;
-    --text:#E7EDF5;
-    --text-secondary:#9AAAC2;
-    --text-muted:#64758F;
-    --accent:#4FD1DE;
-    --accent-strong:#7FE3ED;
-    --accent-wash:#4FD1DE1f;
-    --good:#3FA868;
-    --good-wash:#3FA8681f;
-    --warn:#C2810A;
-    --warn-wash:#C2810A1f;
-    --critical:#D93A5C;
-    --critical-wash:#D93A5C1f;
-    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 32px -14px rgba(0,0,0,.6);
-  }
 }
 :root[data-theme="dark"]{
   --bg:#0A0F1A;
@@ -58,9 +39,9 @@
   --text:#E7EDF5;
   --text-secondary:#9AAAC2;
   --text-muted:#64758F;
-  --accent:#4FD1DE;
-  --accent-strong:#7FE3ED;
-  --accent-wash:#4FD1DE1f;
+  --accent:#4C8DFF;
+  --accent-strong:#84B0FF;
+  --accent-wash:#4C8DFF1f;
   --good:#3FA868;
   --good-wash:#3FA8681f;
   --warn:#C2810A;
@@ -68,6 +49,26 @@
   --critical:#D93A5C;
   --critical-wash:#D93A5C1f;
   --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 32px -14px rgba(0,0,0,.6);
+}
+:root[data-theme="light"]{
+  --bg:#F4F6FA;
+  --surface:#FFFFFF;
+  --surface-2:#EBEFF5;
+  --surface-3:#E1E7F0;
+  --border:#D7DEE8;
+  --text:#101826;
+  --text-secondary:#445064;
+  --text-muted:#6B7688;
+  --accent:#1D5FD1;
+  --accent-strong:#123E8F;
+  --accent-wash:#1D5FD114;
+  --good:#1F8A4C;
+  --good-wash:#1F8A4C1a;
+  --warn:#B5790A;
+  --warn-wash:#B5790A1a;
+  --critical:#C2293B;
+  --critical-wash:#C2293B1a;
+  --shadow: 0 1px 2px rgba(16,24,38,.06), 0 8px 24px -12px rgba(16,24,38,.18);
 }
 
 *{box-sizing:border-box;}
@@ -176,11 +177,8 @@ button{font-family:inherit;}
   transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
 }
 .btn:active{transform:translateY(1px);}
-.btn-primary{background:var(--accent); color:#06222a;}
-:root[data-theme="dark"] .btn-primary, @media (prefers-color-scheme:dark){}
-.btn-primary{color:#06222a;}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn-primary{color:#04181c;}}
-:root[data-theme="dark"] .btn-primary{color:#04181c;}
+.btn-primary{background:var(--accent); color:#071122;}
+:root[data-theme="light"] .btn-primary{color:#F5F8FF;}
 .btn-primary:hover{box-shadow:0 6px 18px -6px var(--accent);}
 .btn-ghost{background:transparent; border-color:var(--border); color:var(--text);}
 .btn-ghost:hover{background:var(--surface-2);}
